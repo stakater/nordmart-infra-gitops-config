@@ -110,7 +110,6 @@ spec:
             fi
             echo “waiting for pod” && sleep 3
           done
-          echo "environment_helm_release_status: $environment_helm_release_status environment_helm_release_reason : $environment_helm_release_reason"
           if [ "$environment_helm_release_status" == "True" ] && { [ "$environment_helm_release_reason" == "InstallSucceeded" ] || [ "$environment_helm_release_reason" == "UpgradeSucceeded" ]; }; then
             echo "Environment is Up & HelmRelease successful"
           else
