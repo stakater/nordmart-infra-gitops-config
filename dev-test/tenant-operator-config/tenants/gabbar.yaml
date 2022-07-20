@@ -15,7 +15,6 @@ spec:
       - mustafa@stakater.com
       - osama@stakater.com
       - julian.rubino@stakater.com
-      - Gabbar_Owner@azuretestrootstakater.onmicrosoft.com
     groups:
       - azure-gabbar-owner
   editors:
