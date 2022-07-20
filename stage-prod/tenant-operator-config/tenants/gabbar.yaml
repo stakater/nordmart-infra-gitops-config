@@ -10,7 +10,8 @@ spec:
   quota: medium
   argocd:
     sourceRepos:
-      - 'https://github.com/stakater/infra-gitops-config'
+      - 'https://github.com/stakater/nordmart-infra-gitops-config'
+      - 'https://github.com/stakater/nordmart-gitops-config'
       - 'https://nexus-helm-stakater-nexus.apps.devtest.vxdqgl7u.kubeapp.cloud/repository/helm-charts/'
   templateInstances:
   - spec:
