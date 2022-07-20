@@ -67,19 +67,8 @@ spec:
           argocd login "$ARGOCD_SERVER" --username="$ARGOCD_USERNAME" --password="$ARGOCD_PASSWORD"
           argocd app get "$TENANT-$ENVIRONMENT-$(params.repoName)" --refresh
           argocd app wait "$TENANT-$ENVIRONMENT-$(params.repoName)" --health --sync
-          environment_helm_release_reason=""
-          environment_helm_release_status=""
           while [[ "$SECONDS" -lt $(params.timeout) ]]
           do 
-            environment_helm_release_reason=$(oc get environment pr-$(params.prNumber)-$(params.repoName) -o jsonpath={.status.helmReleaseStatus.latestCondition.reason})
-            environment_helm_release_status=$(oc get environment pr-$(params.prNumber)-$(params.repoName) -o jsonpath={.status.helmReleaseStatus.latestCondition.status})
-            echo "environment_helm_release_status: $environment_helm_release_status environment_helm_release_reason : $environment_helm_release_reason"
-            if [ "$environment_helm_release_status" == "True" ] && { [ "$environment_helm_release_reason" == "InstallSucceeded" ] || [ "$environment_helm_release_reason" == "UpgradeSucceeded" ]; }; then
-              echo "Environment is Up & HelmRelease successful"
-            else
-              echo "Environment isnt Up or HelmRelease isnt successful"
-              continue
-            fi
             for pod in $(oc get pod -n pr-$(params.prNumber)-$(params.repoName) -o=jsonpath={.items..metadata.name}); 
             do podImage=$(oc get pod $pod -n pr-$(params.prNumber)-$(params.repoName) -o jsonpath={.spec.containers[*].image}); 
               image=$(params.IMAGE_NAME):$(params.IMAGE_TAG)
@@ -105,15 +94,10 @@ spec:
 
                 break;
             else
-                echo “pods not ready”
-                exit 1
+                echo "Pods not ready, Environment isnt up"
             fi
             echo “waiting for pod” && sleep 3
           done
-          if [ "$environment_helm_release_status" == "True" ] && { [ "$environment_helm_release_reason" == "InstallSucceeded" ] || [ "$environment_helm_release_reason" == "UpgradeSucceeded" ]; }; then
-            echo "Environment is Up & HelmRelease successful"
-          else
-            echo "Environment isnt Up or HelmRelease isnt successful"
-            exit 1
-          fi
+          echo "Timeout ended, Environment isnt up, Failing task"
+          exit 1
         fi
