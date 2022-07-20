@@ -95,8 +95,9 @@ spec:
                 break;
             else
                 echo "Pods not ready, Environment isnt up"
-                exit 1
             fi
             echo “waiting for pod” && sleep 3
           done
+          echo "Timeout ended, Environment isnt up, Failing task"
+          exit 1
         fi
