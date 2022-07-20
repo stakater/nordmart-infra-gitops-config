@@ -67,6 +67,7 @@ spec:
           argocd login "$ARGOCD_SERVER" --username="$ARGOCD_USERNAME" --password="$ARGOCD_PASSWORD"
           argocd app get "$TENANT-$ENVIRONMENT-$(params.repoName)" --refresh
           argocd app wait "$TENANT-$ENVIRONMENT-$(params.repoName)" --health --sync
+          readyStatus="false"
           while [[ "$SECONDS" -lt $(params.timeout) ]]
           do 
             for pod in $(oc get pod -n pr-$(params.prNumber)-$(params.repoName) -o=jsonpath={.items..metadata.name}); 
@@ -98,6 +99,8 @@ spec:
             fi
             echo “waiting for pod” && sleep 3
           done
-          echo "Timeout ended, Environment isnt up, Failing task"
-          exit 1
+          if [ $readyStatus == false ]; then
+            echo "Timeout ended, Environment isnt up, Failing task"
+            exit 1
+          fi
         fi
