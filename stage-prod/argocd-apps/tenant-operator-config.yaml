@@ -9,7 +9,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: stage-prod/tenant-operator-config
-    repoURL: 'https://github.com/stakater/infra-gitops-config.git'
+    repoURL: 'https://github.com/stakater/nordmart-infra-gitops-config.git'
     directory:
        recurse: true
     targetRevision: main
