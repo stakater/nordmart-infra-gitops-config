@@ -18,8 +18,6 @@ spec:
     groups:
       - azure-gabbar-owner
   editors:
-    users:
-      - Gabbar_Editor@azuretestrootstakater.onmicrosoft.com
     groups:
       - azure-gabbar-editor
   viewers:

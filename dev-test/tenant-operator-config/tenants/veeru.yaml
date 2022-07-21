@@ -15,8 +15,6 @@ spec:
     groups:
       - azure-veeru-owner
   editors:
-    users:
-      - Veeru_Editor@azuretestrootstakater.onmicrosoft.com
     groups:
       - azure-veeru-editor
   viewers:
