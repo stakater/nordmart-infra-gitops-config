@@ -7,7 +7,7 @@ spec:
    users:
    - hanzala@stakater.com
    - osama@stakater.com
-  quota: medium
+  quota: nordmart-medium
   argocd:
     sourceRepos:
       - 'https://github.com/stakater/nordmart-apps-gitops-config'
