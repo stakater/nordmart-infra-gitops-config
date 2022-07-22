@@ -3,7 +3,7 @@ kind: Tenant
 metadata:
   name: veeru
 spec:
-  quota: medium
+  quota: nordmart-medium
   owners:
     users:
       - bilal.bokharee@stakater.com

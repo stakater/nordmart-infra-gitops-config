@@ -1,7 +1,7 @@
 apiVersion: tenantoperator.stakater.com/v1beta1
 kind: Quota
 metadata:
-  name: medium
+  name: nordmart-medium
   annotations:
     quota.tenantoperator.stakater.com/is-default: "false"
 spec:
