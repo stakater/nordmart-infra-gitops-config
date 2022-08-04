@@ -3,7 +3,7 @@ kind: Tenant
 metadata:
   name: gabbar
 spec:
-  quota: nordmart-medium
+  quota: nordmart-large
   owners:
     users:
       - rasheed@stakater.com
