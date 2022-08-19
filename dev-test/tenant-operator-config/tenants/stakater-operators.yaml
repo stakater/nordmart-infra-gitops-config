@@ -1,0 +1,24 @@
+apiVersion: tenantoperator.stakater.com/v1beta1
+kind: Tenant
+metadata:
+  name: stakater-operators
+spec:
+  quota: nordmart-large
+  sandbox: true
+  owners:
+    users:
+      - rasheed@stakater.com
+      - faizan@stakater.com
+  argocd:
+    sourceRepos:
+      - 'https://github.com/stakater/nordmart-infra-gitops-config'
+      - 'https://github.com/stakater/nordmart-apps-gitops-config'
+      - 'https://nexus-helm-stakater-nexus.apps.devtest.vxdqgl7u.kubeapp.cloud/repository/helm-charts/'
+  templateInstances:
+  - spec:
+      template: tenant-vault-access
+      sync: true
+  namespaces:
+  - build
+  - preview
+  - dev
