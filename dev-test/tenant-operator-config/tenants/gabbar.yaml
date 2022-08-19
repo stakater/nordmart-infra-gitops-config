@@ -3,7 +3,7 @@ kind: Tenant
 metadata:
   name: gabbar
 spec:
-  quota: nordmart-medium
+  quota: nordmart-large
   sandbox: true
   owners:
     users:
@@ -16,14 +16,6 @@ spec:
       - mustafa@stakater.com
       - osama@stakater.com
       - julian.rubino@stakater.com
-    groups:
-      - azure-gabbar-owner
-  editors:
-    groups:
-      - azure-gabbar-editor
-  viewers:
-    groups:
-      - azure-gabbar-viewer
   argocd:
     sourceRepos:
       - 'https://github.com/stakater/nordmart-infra-gitops-config'
