@@ -8,15 +8,7 @@ spec:
   owners:
     users:
       - rasheed@stakater.com
-      - tehreem.nisa@stakater.com
-      - bilal.bokharee@stakater.com
-      - hanzala@stakater.com
-      - shahid@stakater.com
-      - asfa@stakater.com
-      - mustafa@stakater.com
-      - osama@stakater.com
       - faizan@stakater.com
-      - mahnoor.asghar@stakater.com
   argocd:
     sourceRepos:
       - 'https://github.com/stakater/nordmart-infra-gitops-config'
