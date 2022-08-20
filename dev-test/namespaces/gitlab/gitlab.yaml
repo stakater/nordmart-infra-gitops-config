@@ -4,7 +4,3 @@ metadata:
   name: gitlab
   labels:
     stakater.com/tenant: gabbar
-  annotations:
-    argocd.argoproj.io/sync-options: Prune=false
-    argocd.argoproj.io/sync-wave: "-1"
-    openshift.io/node-selector: "node-role.kubernetes.io/infra="
