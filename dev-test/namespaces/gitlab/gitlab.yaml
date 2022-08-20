@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: gitlab
   labels:
-    stakater.com/tenant: gabbar
+    stakater.com/tenant: gitlab
