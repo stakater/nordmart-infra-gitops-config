@@ -4,6 +4,7 @@ metadata:
   name: remote
 spec:
   quota: nordmart-medium
+  sandbox: true
   owners:
     users:
       - rasheed@stakater.com
