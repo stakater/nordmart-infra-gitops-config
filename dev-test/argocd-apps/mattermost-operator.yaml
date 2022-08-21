@@ -8,11 +8,11 @@ spec:
     namespace: mattermost-operator
     server: 'https://kubernetes.default.svc'
   source:
-    path: dev-test/mattermost-operator
-    repoURL: 'https://github.com/stakater/nordmart-infra-gitops-config.git'
-    targetRevision: main
-    directory:
-      recurse: true
+    chart: mattermost-operator
+    repoURL: https://helm.mattermost.com
+    targetRevision: 0.3.1
+    helm:
+      releaseName: mattermost-operator
   project: default
   syncPolicy:
     automated:
