@@ -15,4 +15,4 @@ spec:
       - 'https://nexus-helm-stakater-nexus.apps.devtest.vxdqgl7u.kubeapp.cloud/repository/helm-charts/'
   commonMetadata:
     annotations:
-      openshift.io/node-selector: node-role.kubernetes.io/infra= 
+      openshift.io/node-selector: node-role.kubernetes.io/infra=
