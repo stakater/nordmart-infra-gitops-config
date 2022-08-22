@@ -8,6 +8,11 @@ spec:
     users:
       - rasheed@stakater.com
       - faizan@stakater.com
+  argocd:
+    sourceRepos:
+      - 'https://github.com/stakater/nordmart-infra-gitops-config'
+      - 'https://github.com/stakater/nordmart-apps-gitops-config'
+      - 'https://nexus-helm-stakater-nexus.apps.devtest.vxdqgl7u.kubeapp.cloud/repository/helm-charts/'
   commonMetadata:
     annotations:
       openshift.io/node-selector: node-role.kubernetes.io/infra= 
