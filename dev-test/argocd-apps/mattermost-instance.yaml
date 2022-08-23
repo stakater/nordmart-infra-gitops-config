@@ -10,13 +10,13 @@ spec:
   source:
     chart: mattermost-instance
     repoURL: https://stakater.github.io/stakater-charts
-    targetRevision: 0.1.6
+    targetRevision: 0.1.7
     helm:
       releaseName: mattermost-instance
       values: |
         tenant:
           database:
-            connectionString: AgCHEddZlZgRm2NF+AD4e9ZTR82kyVsNDFwApmZm5BqeGWpDYtK+DCi0a767agAjwRR3mdpxzvpQKgmjz4I9yFI1sLzjr1N8AlcPKDtKDt+iD7NOX/C7mALo3qXeuRbc/YQQyyCODVzo9ob/WMDD1szXOb0QXAhO51DxFQTK06ql/elnisSwh5kKjKBRZzAx7kMEVYJ+awqIEOtJs5p+l6xtpfE1DJHB6eNrHXnw/jecM87H7DXH26+4zdCNf4Bb7aZxHbnTVmj3PUgXOFz2j/+x84glUWNXnBKALSKzP/wA5OYAMl1AH+NcOqQX8S/UOg5POb3tCxa8+ac8IJw8lBxTtl6ipk+sD1rEdnDB894iTUWxhkEDUuzTBtDGxB85AgT7J/JFrcQbhdbyCnEV5vWs7La7eJcJT7siGPZS1tN3S/c9xtw9kdNOqEAzmUf4bmvN9mALgF6lbddyGSDBMu5TcvCxgntHYk4eg5NCZK8+tdgdHwjJdNqRs8J+PpfwbjYgY9IDZYymy+qG4yR4OUFfMCIjhWGn7qIIhunWe0NfkawESFKWQYIFf05oOkkWSlmWOZqDkr8Kkn83amFRA05Wev7DyRb4PjTKf5ejMdxCF/vE8QzuYk2ZDvod+xvRgx/Ma6qj/YSMNfLWMmD33vxbW1DNDPWVv0FNJDxwnUXM1ZTDTbZY13Vn+EsIj5aUMOo61Q+Lj4nOQ/EFa6m4ECgv8svWb+BTqSjx1ZVDoVKw4fjh83uyJF2YZzvDqJutaNHaVmuMgZaLe2UVIpzzdA+OorXMaifz4FbxD/eHDmVOYJjn10OfiLgcsrH3oVuWxVc8UgPC65Vhm4YXhAlOGF/yp7399nIuoiFRfl7RoFr6XXp8Tw==
+            connectionString: AgBYOVp7GEM7IAil+xkU2lTiY09Yu0OZiE6ajfneCctddEjRjMSoSHevkiTLBBDbApY9QEibL8ZzHjPSlc+hZ1LN5gU2QUx9150vbzuaPGaXk5wF8opM1SixtdtP5NNj1jGOCL8cuBWygEQzEgESej7DXJ2wMqotkcdts/pynzc+Hx8jHwTpn4bf7GAO2nfLnSUvLFX1nUC92COTwI44HoWkbOVxiAJ3Vt1taQrzHKkX1CVnucplbrMx4lI+tdOKBRID4wnSnSxdnLgSouBnOT3021KRAmh1aaSqcmR8J3VGOef8snkoAvDgdv0331oEfwq/jZACMTMMqDr8V7lj7BeK+q8D4m4Zdr5Za4/4gjh+IPr7EYAGgmr6YJw1kpzURryHMzobcJ/aWy/ij4gYOf3Skh9yZeIgN/AqSa1GYQMlGhIGU7kM3HuK0Mpvf3Ulwqu61F52wbQWYlDJFOZ/kYmvInrugAOAuKMKEgorjUEKhXjpRnNXxaz2a+6xwNCANwwqkMtR9TeEbt6q/hXjdQs3gRaXHzwPR61LW7rM4UxelePF9i5bdSsAfmcSNn7OxdXvG/GkKiwT4pRr1rf0CuXIi3//occclRnFM+bkKlGze2zb5tCoi1Ok3RyRS0vNPJsXGkMJcru8y+ipTXqMoz2xuk+4FJNsIEO+te3WvDQqpwDB72b/Hfaw84s3qIrcHGEjtSyC4jo1TLdpgC5MbEwZK3pXZogtmpHQ+cCEhqFi0DLKKMt2tZ4JM3TkNZwvZjlVlCjbLDWWvwdIFBUJtBIW5oECs1vVtxDREmhlG+wHJxG7EZwMYJHhMFt4Z9oG0Hc1Jixj2XCKN+Fcbs8+GDXTnso3yU0VfrsXJRmRemshAlivcQ==
   project: default
   syncPolicy:
     automated:
