@@ -12,6 +12,6 @@ spec:
   limitrange:
     limits:
       - defaultRequest:
-          cpu: 50m
+          cpu: 5m
           memory: 50Mi
         type: Container
