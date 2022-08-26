@@ -16,7 +16,6 @@ spec:
       - osama@stakater.com
       - julian.rubino@stakater.com
       - mahnoor.asghar@stakater.com
-      - stakater-devtest-dominator-owner
     groups:
       - stakater-devtest-dominator-owner
   argocd:
