@@ -17,6 +17,8 @@ spec:
       - julian.rubino@stakater.com
       - mahnoor.asghar@stakater.com
       - muneeb@stakater.com
+    groups:
+      - stakater-devtest-dominator-owner
   argocd:
     sourceRepos:
       - 'https://github.com/stakater/nordmart-infra-gitops-config'
