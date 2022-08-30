@@ -1,0 +1,9 @@
+apiVersion: tenantoperator.stakater.com/v1beta1
+kind: Tenant
+metadata:
+  name: test
+spec:
+  quota: nordmart-medium
+  owners:
+    users:
+      - hanzala@stakater.com
