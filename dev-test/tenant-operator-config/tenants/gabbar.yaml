@@ -17,6 +17,7 @@ spec:
       - julian.rubino@stakater.com
       - mahnoor.asghar@stakater.com
       - muneeb@stakater.com
+      - avinash.upadhyaya@stakater.com
     groups:
       - stakater-devtest-dominator-owner
   argocd:
