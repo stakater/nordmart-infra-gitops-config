@@ -18,6 +18,9 @@ spec:
       - mahnoor.asghar@stakater.com
       - muneeb@stakater.com
       - avinash.upadhyaya@stakater.com
+      - asfa-mumtaz@stakater.com
+      - muhammad-mustafa@stakater.com
+      
     groups:
       - stakater-devtest-dominator-owner
   argocd:
