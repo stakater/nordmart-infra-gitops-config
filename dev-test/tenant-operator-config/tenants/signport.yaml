@@ -14,6 +14,7 @@ spec:
       - rasheed@stakater.com
   argocd:
     sourceRepos:
+      - 'https://stakater.github.io/stakater-charts'
       - 'https://github.com/stakater/nordmart-infra-gitops-config'
       - 'https://github.com/stakater/nordmart-apps-gitops-config'
       - 'https://nexus-helm-stakater-nexus.apps.devtest.vxdqgl7u.kubeapp.cloud/repository/helm-charts/'
