@@ -155,7 +155,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: gitlab-app-nonroot
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
   annotations:
     {}
 ---
@@ -164,7 +164,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: gitlab-app-anyuid
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
   annotations:
     {}
 ---
@@ -173,7 +173,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: gitlab-manager
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
 ---
 # Source: gitlab-operator/templates/nginx-ingress/serviceaccount.yaml
 # Source: gitlab/charts/nginx-ingress/templates/controller-serviceaccount.yaml
@@ -181,7 +181,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: gitlab-nginx-ingress
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
 ---
 # Source: gitlab-operator/templates/app/role.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -581,7 +581,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: gitlab-app-nonroot
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
 ---
 # Source: gitlab-operator/templates/app/rolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -595,7 +595,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: gitlab-app-anyuid
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
 ---
 # Source: gitlab-operator/templates/manager/proxy-rolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -609,7 +609,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: gitlab-manager
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
 ---
 # Source: gitlab-operator/templates/manager/rolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -623,7 +623,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: gitlab-manager
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
 ---
 # Source: gitlab-operator/templates/nginx-ingress/clusterrolebinding.yaml
 # Source: gitlab/charts/nginx-ingress/templates/clusterrolebinding.yaml
@@ -638,7 +638,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: gitlab-nginx-ingress
-    namespace: gitlab-system
+    namespace: stakater-gitlab-system
 ---
 # Source: gitlab-operator/templates/manager/leader-election-role.yaml
 # permissions to do leader election.
@@ -646,7 +646,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: gitlab-leader-election-role
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
 rules:
 - apiGroups:
   - ""
@@ -676,7 +676,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: gitlab-nginx-ingress
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
 rules:
   - apiGroups:
       - ""
@@ -755,7 +755,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: gitlab-leader-election-rolebinding
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -763,14 +763,14 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: gitlab-manager
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
 ---
 # Source: gitlab-operator/templates/nginx-ingress/rolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: gitlab-nginx-ingress
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -778,14 +778,14 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: gitlab-nginx-ingress
-    namespace: gitlab-system
+    namespace: stakater-gitlab-system
 ---
 # Source: gitlab-operator/templates/openshift/rolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: gitlab-system:openshift:scc:nginx-ingress-scc
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -793,7 +793,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: gitlab-nginx-ingress
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
 ---
 # Source: gitlab-operator/templates/manager/metrics-service.yaml
 apiVersion: v1
@@ -802,7 +802,7 @@ metadata:
   labels:
     control-plane: controller-manager
   name: gitlab-controller-manager-metrics-service
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
 spec:
   ports:
   - name: https
@@ -816,7 +816,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: gitlab-webhook-service
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
 spec:
   ports:
     - port: 443
@@ -832,7 +832,7 @@ metadata:
   labels:
     control-plane: controller-manager
   name: gitlab-controller-manager
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
 spec:
   replicas: 1
   selector:
@@ -920,7 +920,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: gitlab-serving-cert
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
 spec:
   dnsNames:
   - gitlab-webhook-service.gitlab-system.svc
@@ -948,7 +948,7 @@ apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: gitlab-selfsigned-issuer
-  namespace: gitlab-system
+  namespace: stakater-gitlab-system
 spec:
   selfSigned: {}
 ---
@@ -997,7 +997,7 @@ webhooks:
   clientConfig:
     service:
       name: gitlab-webhook-service
-      namespace: gitlab-system
+      namespace: stakater-gitlab-system
       path: /validate-apps-gitlab-com-v1beta1-gitlab
   failurePolicy: Fail
   name: vgitlab.kb.io
