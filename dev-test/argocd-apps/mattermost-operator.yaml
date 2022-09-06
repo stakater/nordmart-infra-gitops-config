@@ -5,7 +5,7 @@ metadata:
   namespace: openshift-gitops
 spec:
   destination:
-    namespace: mattermost-operator
+    namespace: mattermost-system
     server: 'https://kubernetes.default.svc'
   source:
     chart: mattermost-operator
