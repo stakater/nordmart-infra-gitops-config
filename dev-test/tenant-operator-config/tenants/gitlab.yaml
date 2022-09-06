@@ -10,4 +10,7 @@ spec:
       - faizan@stakater.com
   commonMetadata:
     annotations:
-      openshift.io/node-selector: node-role.kubernetes.io/infra= 
+      openshift.io/node-selector: node-role.kubernetes.io/infra=
+  namespaces:
+  - system
+  - instance
