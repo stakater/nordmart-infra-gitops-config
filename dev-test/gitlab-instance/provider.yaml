@@ -12,5 +12,5 @@ data:
 kind: Secret
 metadata:
   name: saml-provider
-  namespace: stakater-gitlab-instance
+  namespace: gitlab-instance
 type: Opaque
