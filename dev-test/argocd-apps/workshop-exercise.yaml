@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: workshop-exercise
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: workshop-exercise
+    server: 'https://kubernetes.default.svc'
+  source:
+    chart: workshop-exercise
+    repoURL: https://stakater.github.io/stakater-charts
+    helm:
+      releaseName: workshop-exercise
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
