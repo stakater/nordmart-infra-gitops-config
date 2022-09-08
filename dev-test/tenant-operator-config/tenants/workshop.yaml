@@ -1,0 +1,15 @@
+apiVersion: tenantoperator.stakater.com/v1beta1
+kind: Tenant
+metadata:
+  name: workshop
+spec:
+  quota: nordmart-medium
+  owners:
+    users:
+      - rasheed@stakater.com
+      - faizan@stakater.com
+  commonMetadata:
+    annotations:
+      openshift.io/node-selector: node-role.kubernetes.io/infra=
+  namespaces:
+  - exercise
