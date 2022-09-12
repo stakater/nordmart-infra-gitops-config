@@ -16,7 +16,7 @@ spec:
       values: |
         tenant:
           database:
-            connectionString: AgA7EhDZ15o06NLmzJOdPfq1arBmB8z7TAvxKqrI2ono7VxZ3VXgADPwy+nOwYtUw9/gkZzjdNF5bpeCg6VE9e6UYCvJda9EqZojS5SRFYcQ9pBkjvQj9JfKCHKOj9uUtAdtLEh9cLWR7HZqLIh0/+qeZEyIV+XSqjEI/95F6kbu2UR0ZSqjLYiId83fU1CfdgNm9rRHeRYPkl4MaP4R4u61lyxr8WBZIhVi3ef5Ij0JUTd8Cy0cUPMj6/+qCXoKzYF0RDIoCkYRxPfy+HT0UKK/MCdUG/HEK0LAzKDGnfUIIgf+5BM6no8Gx9utUTrtWSHPaK3sd4+ZoT9p6MAs8Wa6nz18vbZxYObvFBb/N4lo4v0HQDLnzj4AV2tYfKsY9lVWlMIjFTbHwPczYsPLSEOvwoS23mDCVJl9IahqqeNV8kUpqpVQ53wQKVg7tJ6gfYSMyBDoSJvUDjIldlrAq/+wRMlqERIXX7Mo06fRvma17jeBl6s139GGBhP7TdX4NqVOlP6kQLyYEi7geM2o0eak+cTTbxwLj8Xk6LjhB3OHxEiVopFBh6CLAXNCWkY5UNXpU8aO3vTPpK175IyWIOHvwIZ4t7znWIoLGadi7hMGkj4UI81F6KOe5h8ztEryDBkEQh9aAa1feWx8e5rc1dcNz8hkCcxbK23NSTnEooH+hR2Lx8nxUNSOHNqXQV9qXPEGH9daNCMIk8KFoSVDiBS58PcnBXF2012pv6lIPdpU/Q3RFzLeYCvyEkRZOw4tbnXOk4ALEkKHQJk9eXQej3KRu69aP3oXRAzERfP9XNYPvjOsuOUppHSIHrHs3phSk04Tq/5qnyqSf4rqtHj8oAfWXA5eL1/jw4sq3A5Ptg==
+            connectionString: cG9zdGdyZXM6Ly9kb2N1bWVudHNlcnZpY2UtdXNlcjpSd0coT1QyPFZ3dTE7XyltfFVkbHdDbXZAcG9zdGdyZXMtcHJpbWFyeS5tYXR0ZXJtb3N0LWluc3RhbmNlLnN2Yzo1NDMyL2RvY3VtZW50c2VydmljZS1kYg==
           forecastle:
             icon: https://github.com/stakater/ForecastleIcons/raw/master/alert-manager.png
   project: default
