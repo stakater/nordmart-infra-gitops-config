@@ -18,8 +18,6 @@ spec:
       - mahnoor.asghar@stakater.com
       - muneeb@stakater.com
       - avinash.upadhyaya@stakater.com
-      - asfa-mumtaz@stakater.com
-      - bilal-bokharee@stakater.com
       - ehi.enabulele@stakater.com
     groups:
       - stakater-devtest-dominator-owner
