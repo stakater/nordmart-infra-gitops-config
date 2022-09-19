@@ -36,3 +36,6 @@ spec:
   - dev
   - stage
   - prod
+  commonMetadata:
+    annotations:
+      openshift.io/node-selector: node-role.kubernetes.io/pipeline=
