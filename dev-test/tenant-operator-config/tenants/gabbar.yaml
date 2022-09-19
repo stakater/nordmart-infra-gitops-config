@@ -36,6 +36,8 @@ spec:
   - dev
   - stage
   - prod
-  commonMetadata:
-    annotations:
-      openshift.io/node-selector: node-role.kubernetes.io/pipeline=
+  specificMetadata:
+    - namespaces:
+        - gabbar-build
+      annotations:
+        openshift.io/node-selector: node-role.kubernetes.io/pipeline=
