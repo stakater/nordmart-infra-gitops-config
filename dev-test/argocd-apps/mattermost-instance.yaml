@@ -19,6 +19,19 @@ spec:
             connectionString: AgAqnoOmJLuvajiTlsKh4zuKrxGPCA0shnAeJai8FslbTaIQTzriSUKSk6r5zQ8cwnPQRQ9jFHslPAWGvPQtl9qFm3/0Jv2xfAgXZHypnaKB7W32XMuEwsrnPuJhknd8m2TFcO6/5VFNyfKPPO0GVn/GCzw0CL0fNSN2LgNWyX7ditBHu+fMphxYtcpe0043WQUTnBKq+CmXPsfmy+zQPupVEvd34PTJa15F2vYqYb5iyjoAEB8ol6dayAurHLRcDIGPqQOgROJKcd3DuC7q8gy5EWhxmd2zNzAOPcT8tRpcWDsqsEIVr4QhqoxcTpNkLhPX62JBk+AsVvlxJiVhHX0UAn5PgoEjniMlrvOKHjpwAKnw0q0uexXUHVQy9B93igaEWjKz/AtZuSQml5Lq7sXnQym/+FhPjokPzPU2g6YROzNctJkyWAVu2uVkFGo3G4BhU0ULYXxGzpPYld/SV6GKXiY1Ljw/u/A1TbZHkWIgDHJA9GDRxNhiAUaTIVplXqT2awxER4sBekBQDBi6SBIdqZyKJdCshX6fAy/nm1ptVX2T+nAH338ByaS2IJD0ww+IgEV5+EtlkXsLVMIF6fbdVPrdA3jcK6JMGIlaOH1LySkjyzuLQnn9PoInKiRPjPWVPTfctpFKrk7b11uFb1K6Bbl8KoWzbbve3ZTPGgudwLkfg52S4QBzcYvkRAJzxjLdQouf8tGs8ExiNbN9dBBiaexrb3rasJnB1PUvDGlqNV3BMr4JCKM/itXA1CPsOUx9vUWYa3M07fug34XzN265YTA86ZugFM8IgHsHvCd3P5pXpnB85ggRh+sLNmBcCZ90p6Lmv6D++2ZgmOwlMDODY4vUSOThx90KqOz/12+9vMLgUWPZ
           forecastle:
             icon: https://github.com/stakater/ForecastleIcons/raw/master/alert-manager.png
+        postgres-instance:
+            instances:
+              - name: instance1
+                dataVolumeClaimSpec:
+                  accessModes:
+                  - "ReadWriteOnce"
+                  resources:
+                    requests:
+                      storage: 40Gi
+            repo:
+              name: repo1
+              storage: 5Gi
+
   project: default
   syncPolicy:
     automated:
