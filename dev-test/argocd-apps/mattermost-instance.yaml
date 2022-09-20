@@ -10,7 +10,7 @@ spec:
   source:
     chart: mattermost-instance
     repoURL: https://stakater.github.io/stakater-charts
-    targetRevision: 0.1.16
+    targetRevision: 0.1.17
     helm:
       releaseName: mattermost-instance
       values: |
