@@ -71,7 +71,7 @@ spec:
           
             TEST_URL=$(oc get route -n $TENANT_NAME-dev -l app=$(yq .application.applicationName ../deploy/values.yaml) -o jsonpath='{range .items[*]}{.spec.host}')
           
-            yarn run start ci $TEST_URL 
+            yarn run start ci https://$TEST_URL 
           
           fi
 
