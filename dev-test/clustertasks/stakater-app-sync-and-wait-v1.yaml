@@ -52,6 +52,8 @@ spec:
       workingDir: $(workspaces.source.path)
       script: |
         TENANT=$(echo $(params.namespace) | cut -d'-' -f 1)
+        COMMIT_HASH=`echo -n $(params.IMAGE_TAG) | tail -c 8`
+        
         # PR Merged into Main Branch 
         if [ $(params.prNumber) = "NA" ]; then
           echo "Not a PR, wont wait for the pods"
@@ -70,11 +72,11 @@ spec:
           readyStatus="false"
           while [[ "$SECONDS" -lt $(params.timeout) ]]
           do 
-            for pod in $(oc get pod -n pr-$(params.prNumber)-$(params.repoName) -o=jsonpath={.items..metadata.name}); 
-            do podImage=$(oc get pod $pod -n pr-$(params.prNumber)-$(params.repoName) -o jsonpath={.spec.containers[*].image}); 
+            for pod in $(oc get pod -n pr-$(params.prNumber)-$(params.repoName)-$COMMIT_HASH -o=jsonpath={.items..metadata.name}); 
+            do podImage=$(oc get pod $pod -n pr-$(params.prNumber)-$(params.repoName)-$COMMIT_HASH -o jsonpath={.spec.containers[*].image}); 
               image=$(params.IMAGE_NAME):$(params.IMAGE_TAG)
               if [ $podImage == $image ]; then
-                  readyStatus=$(oc get pods $pod -n pr-$(params.prNumber)-$(params.repoName) -o jsonpath='{.status.containerStatuses[*].ready}')
+                  readyStatus=$(oc get pods $pod -n pr-$(params.prNumber)-$(params.repoName)-$COMMIT_HASH -o jsonpath='{.status.containerStatuses[*].ready}')
                   break;
               fi
             done
@@ -83,11 +85,12 @@ spec:
 
                 # commenting app url on repository
                 REPO_URL=$(params.gitrepositoryurl)
+                
                 #Remove protocol
                 REPO_NAME=${REPO_URL#*//}
                 #Remove baseurl
                 REPO_NAME=${REPO_NAME#*/}
-                URL=$(oc get route -n pr-$(params.prNumber)-$(params.repoName) -l app=$(yq .application.applicationName deploy/values.yaml) -o jsonpath='{range .items[*]}{.spec.host}')
+                URL=$(oc get route -n pr-$(params.prNumber)-$(params.repoName)-$COMMIT_HASH -l app=$(yq .application.applicationName deploy/values.yaml) -o jsonpath='{range .items[*]}{.spec.host}')
                 echo $URL
                 curl -s -H "Authorization: token ${GITHUB_TOKEN}" \
                 -X POST -d '{"body": "Tekton - Pipeline ran successfully and url https://'$URL' is available"}' \
