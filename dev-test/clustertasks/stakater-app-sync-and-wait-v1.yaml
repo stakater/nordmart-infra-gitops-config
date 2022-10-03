@@ -76,7 +76,7 @@ spec:
             do podImage=$(oc get pod $pod -n pr-$(params.prNumber)-$(params.repoName)-$COMMIT_HASH -o jsonpath={.spec.containers[*].image}); 
               image=$(params.IMAGE_NAME):$(params.IMAGE_TAG)
               if [ $podImage == $image ]; then
-                  readyStatus=$(oc get pods $pod -n pr-$(params.prNumber)-$(params.repoName) -o jsonpath='{.status.containerStatuses[*].ready}')
+                  readyStatus=$(oc get pods $pod -n pr-$(params.prNumber)-$(params.repoName)-$COMMIT_HASH -o jsonpath='{.status.containerStatuses[*].ready}')
                   break;
               fi
             done
