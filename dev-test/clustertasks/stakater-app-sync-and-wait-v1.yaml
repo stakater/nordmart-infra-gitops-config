@@ -37,17 +37,17 @@ spec:
       - name: ARGOCD_SERVER
         valueFrom:
           secretKeyRef:
-            name: argocd-cluster
+            name: tekton-argocd-auth
             key: server
       - name: ARGOCD_USERNAME
         valueFrom:
           secretKeyRef:
-            name: argocd-cluster
+            name: tekton-argocd-auth
             key: username
       - name: ARGOCD_PASSWORD
         valueFrom:
           secretKeyRef:
-            name: argocd-cluster
+            name: tekton-argocd-auth
             key: password
       workingDir: $(workspaces.source.path)
       script: |
