@@ -1,0 +1,18 @@
+apiVersion: tenantoperator.stakater.com/v1beta1
+kind: Tenant
+metadata:
+  name: rhsso
+spec:
+  quota: nordmart-medium
+  owners:
+    users:
+      - faizan@stakater.com
+  argocd:
+    sourceRepos:
+      - 'https://stakater.github.io/stakater-charts'
+      - 'https://github.com/stakater/charts.git'
+      - 'https://github.com/stakater/nordmart-infra-gitops-config'
+      - 'https://github.com/stakater/nordmart-apps-gitops-config'
+      - 'https://nexus-helm-stakater-nexus.apps.devtest.vxdqgl7u.kubeapp.cloud/repository/helm-charts/'
+  namespaces:
+  - dev
