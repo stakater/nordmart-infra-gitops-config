@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: splunk-operator
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: splunk-operator
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: stakater/splunk-operator
+    repoURL: 'https://github.com/stakater/charts.git'
+    targetRevision: add-splunk-operator
+    directory:
+      recurse: true
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
