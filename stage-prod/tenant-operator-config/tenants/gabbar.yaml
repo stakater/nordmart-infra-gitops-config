@@ -9,7 +9,7 @@ spec:
    - osama@stakater.com
    - rasheed@stakter.com
    groups:
-   - stakater-devtest-dominator-owner
+   - stakater-stage-dominator-owner
   quota: nordmart-medium
   argocd:
     sourceRepos:
