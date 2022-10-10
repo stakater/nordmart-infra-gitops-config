@@ -8,11 +8,11 @@ spec:
     namespace: splunk-operator
     server: 'https://kubernetes.default.svc'
   source:
-    path: stakater/splunk-operator
-    repoURL: 'https://github.com/stakater/charts.git'
-    targetRevision: main
-    directory:
-      recurse: true
+    chart: splunk-operator
+    repoURL: https://stakater.github.io/stakater-charts
+    targetRevision: 0.0.4
+    helm:
+      releaseName: splunk-operator
   project: default
   syncPolicy:
     automated:
