@@ -10,7 +10,7 @@ spec:
   source:
     chart: splunk-operator
     repoURL: https://stakater.github.io/stakater-charts
-    targetRevision: 0.0.5
+    targetRevision: 0.0.6
     helm:
       releaseName: splunk-operator
   project: default
