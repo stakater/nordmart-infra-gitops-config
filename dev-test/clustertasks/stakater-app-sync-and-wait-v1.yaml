@@ -25,6 +25,9 @@ spec:
     description: The git repository url
   workspaces:
   - name: source
+  results:
+    - name: application-route
+      description: application-route
   steps:
     - image: 'stakater/pipeline-toolbox:v0.0.11'
       name: sync-and-wait
@@ -61,6 +64,9 @@ spec:
           argocd login "$ARGOCD_SERVER" --username="$ARGOCD_USERNAME" --password="$ARGOCD_PASSWORD"
           argocd app get "$TENANT-$ENVIRONMENT-$(params.repoName)" --refresh
           argocd app wait "$TENANT-$ENVIRONMENT-$(params.repoName)" --health --sync
+          URL=$(oc get route -n $TENANT-dev -l app=$(yq .application.applicationName deploy/values.yaml) -o jsonpath='{range .items[*]}{.spec.host}')
+          echo "URL:" $URL
+          echo $URL | tee $(results.application-route.path)
 
         # PR Opened/Modified
         elif [ $(params.prNumber) != "NA" ]; then
@@ -91,7 +97,8 @@ spec:
                 #Remove baseurl
                 REPO_NAME=${REPO_NAME#*/}
                 URL=$(oc get route -n pr-$(params.prNumber)-$(params.repoName)-$COMMIT_HASH -l app=$(yq .application.applicationName deploy/values.yaml) -o jsonpath='{range .items[*]}{.spec.host}')
-                echo $URL
+                echo $URL | tee $(results.application-route.path)
+                echo "URL:" $URL
                 curl -s -H "Authorization: token ${GITHUB_TOKEN}" \
                 -X POST -d '{"body": "Tekton - Pipeline ran successfully and url https://'$URL' is available"}' \
                 "https://api.github.com/repos/${REPO_NAME}/issues/$(params.prNumber)/comments"
