@@ -64,7 +64,7 @@ spec:
           argocd login "$ARGOCD_SERVER" --username="$ARGOCD_USERNAME" --password="$ARGOCD_PASSWORD"
           argocd app get "$TENANT-$ENVIRONMENT-$(params.repoName)" --refresh
           argocd app wait "$TENANT-$ENVIRONMENT-$(params.repoName)" --health --sync
-          URL=$(oc get route -n $TENANT_NAME-dev -l app=$(yq .application.applicationName ../deploy/values.yaml) -o jsonpath='{range .items[*]}{.spec.host}')
+          URL=$(oc get route -n $TENANT-dev -l app=$(yq .application.applicationName deploy/values.yaml) -o jsonpath='{range .items[*]}{.spec.host}')
           echo "URL:" $URL
           echo $URL | tee $(results.application-route.path)
 
