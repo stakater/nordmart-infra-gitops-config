@@ -18,5 +18,11 @@ spec:
       template: tenant-vault-access
       sync: true
   namespaces:
+  - build
   - stage
   - prod
+  specificMetadata:
+    - namespaces:
+        - veeru-build
+      annotations:
+        openshift.io/node-selector: node-role.kubernetes.io/pipeline=
