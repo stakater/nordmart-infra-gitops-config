@@ -12,7 +12,7 @@ spec:
     sourceRepos:
       - 'https://github.com/stakater/nordmart-apps-gitops-config'
       - 'https://github.com/stakater/nordmart-infra-gitops-config'
-      - 'https://nexus-helm-stakater-nexus.apps.devtest.vxdqgl7u.kubeapp.cloud/repository/helm-charts/'
+      - 'https://nexus-helm-stakater-nexus.apps.stage.2cc6dtsv.kubeapp.cloud/repository/helm-charts/'
   templateInstances:
   - spec:
       template: tenant-vault-access
