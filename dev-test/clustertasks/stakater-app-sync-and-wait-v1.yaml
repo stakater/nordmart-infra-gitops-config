@@ -56,6 +56,7 @@ spec:
       script: |
         TENANT=$(echo $(params.namespace) | cut -d'-' -f 1)
         COMMIT_HASH=`echo -n $(params.IMAGE_TAG) | tail -c 8`
+        set +x
         
         # PR Merged into Main Branch 
         if [ $(params.prNumber) = "NA" ]; then
