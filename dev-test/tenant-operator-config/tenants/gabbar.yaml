@@ -7,16 +7,7 @@ spec:
   owners:
     users:
       - rasheed@stakater.com
-      - tehreem.nisa@stakater.com
-      - bilal.bokharee@stakater.com
-      - hanzala@stakater.com
-      - asfa@stakater.com
-      - mustafa@stakater.com
-      - osama@stakater.com
-      - julian.rubino@stakater.com
-      - mahnoor.asghar@stakater.com
       - avinash.upadhyaya@stakater.com
-      - ehi.enabulele@stakater.com
     groups:
       - stakater-devtest-dominator-owner
   argocd:
@@ -36,7 +27,7 @@ spec:
   - stage
   - prod
   specificMetadata:
-    - namespaces:
-        - gabbar-build
-      annotations:
-        openshift.io/node-selector: node-role.kubernetes.io/pipeline=
+  - namespaces:
+      - gabbar-build
+    annotations:
+      openshift.io/node-selector: node-role.kubernetes.io/pipeline=
