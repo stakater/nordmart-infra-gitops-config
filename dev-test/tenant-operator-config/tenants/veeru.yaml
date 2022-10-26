@@ -5,21 +5,9 @@ metadata:
 spec:
   quota: nordmart-medium
   owners:
-    users:
-      - bilal.bokharee@stakater.com
-      - asfa@stakater.com
-      - mustafa@stakater.com
-      - osama@stakater.com
-      # Test user for Stakater Cloud IAM
-      - sro-privileged
     groups:
-      - azure-veeru-owner
-  editors:
-    groups:
-      - azure-veeru-editor
-  viewers:
-    groups:
-      - azure-veeru-viewer
+      - stakater-devtest-dominator-owner
+
   argocd:
     sourceRepos:
       - 'https://github.com/stakater/nordmart-apps-gitops-config'
