@@ -31,3 +31,4 @@ spec:
       - gabbar-build
     annotations:
       openshift.io/node-selector: node-role.kubernetes.io/pipeline=
+      scheduler.alpha.kubernetes.io/defaultTolerations: '[{"Key": "pipeline", "Operator": "Exists", "Effect": "NoExecute"}]'
