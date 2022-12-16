@@ -8,6 +8,7 @@ spec:
     users:
       - rasheed@stakater.com
       - avinash.upadhyaya@stakater.com
+      - callum@stakater.com
     groups:
       - stakater-devtest-dominator-owner
       - stakater-devtest-alpha-owner
