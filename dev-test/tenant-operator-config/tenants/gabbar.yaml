@@ -10,6 +10,7 @@ spec:
       - avinash.upadhyaya@stakater.com
     groups:
       - stakater-devtest-dominator-owner
+      - stakater-devtest-alpha-owner
   argocd:
     sourceRepos:
       - 'https://github.com/stakater/charts.git'
