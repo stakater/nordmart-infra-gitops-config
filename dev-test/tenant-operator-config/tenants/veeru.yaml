@@ -7,7 +7,6 @@ spec:
   owners:
     groups:
       - stakater-devtest-dominator-owner
-
   argocd:
     sourceRepos:
       - 'https://github.com/stakater/nordmart-apps-gitops-config'
