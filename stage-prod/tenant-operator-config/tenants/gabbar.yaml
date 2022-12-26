@@ -5,8 +5,6 @@ metadata:
 spec:
   owners:
    users:
-   - hanzala@stakater.com
-   - osama@stakater.com
    - rasheed@stakter.com
    groups:
    - stakater-stage-dominator-owner
@@ -21,6 +19,5 @@ spec:
       template: tenant-vault-access
       sync: true
   namespaces:
-  - build
   - stage
   - prod
