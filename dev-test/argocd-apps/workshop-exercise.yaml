@@ -10,7 +10,7 @@ spec:
   source:
     chart: workshop-exercise
     repoURL: https://stakater.github.io/stakater-charts
-    targetRevision: 0.0.225
+    targetRevision: 0.0.226
     helm:
       releaseName: workshop-exercise
   project: default
