@@ -21,7 +21,3 @@ spec:
       - 'https://github.com/stakater/signport'
   namespaces:
   - dev
-  templateInstances:
-  - spec:
-      template: tenant-vault-access
-      sync: true
