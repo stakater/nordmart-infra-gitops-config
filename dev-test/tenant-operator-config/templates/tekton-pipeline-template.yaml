@@ -1,0 +1,26 @@
+apiVersion: tenantoperator.stakater.com/v1alpha1
+kind: Template
+metadata:
+  name: tekton-pipeline-template
+resources:
+  manifests:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: RoleBinding
+    metadata:
+      name: tekton-pipeline-rolebinding
+    subjects:
+      - kind: ServiceAccount
+        name: pipeline
+        namespace: "${tenant}-build"
+    roleRef:
+       apiGroup: rbac.authorization.k8s.io
+       kind: ClusterRole
+       name: tekton-pipelne-clusterrole
+  - apiVersion: v1
+    kind: ServiceAccount
+    metadata:
+      name: pipeline
+      labels:
+        multi-tenant-operator/ignore-resource-updates: ''
+    secrets:
+      - name: nexus-docker-config
