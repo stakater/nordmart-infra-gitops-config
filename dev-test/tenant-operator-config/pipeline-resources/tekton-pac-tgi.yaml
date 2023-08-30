@@ -1,0 +1,10 @@
+apiVersion: tenantoperator.stakater.com/v1alpha1
+kind: TemplateGroupInstance
+metadata:
+  name: tekton-pac-tgi
+spec:
+  selector:
+    matchExpressions:
+      - {key: stakater.com/kind, operator: In, values: [build]}
+  sync: true
+  template: tekton-pac-rbac
